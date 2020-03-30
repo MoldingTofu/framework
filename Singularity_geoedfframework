@@ -3,7 +3,7 @@ From: continuumio/miniconda3
 
 %files
 
-    framework/ /tmp
+    ../framework/ /tmp
     run-workflow-stage.sh /usr/local/bin/
 
 %environment
