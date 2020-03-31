@@ -61,6 +61,7 @@ jobs:
     - name: Deploy Container
       env:
         TOKEN: ${{ secrets.TOKEN }}
+        GOINSECURE: ec2-18-215-173-2.compute-1.amazonaws.com
       run: |
         singularity remote add geoedf ec2-18-215-173-2.compute-1.amazonaws.com
         echo "    Token: '$TOKEN'" >> ../.singularity/remote.yaml
