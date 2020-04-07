@@ -62,7 +62,6 @@ jobs:
         TOKEN: ${{ secrets.TOKEN }}
         CONTAINER: container.sif
       run: |
-        singularity remote add geoedf www.registry.geoedf.org | echo $TOKEN
-        echo "    Token: ${TOKEN}" >> ../.singularity/remote.yaml
+        echo $TOKEN | singularity remote add geoedf www.registry.geoedf.org
         singularity remote use geoedf
         singularity push -U ${CONTAINER} library://MoldingTofu/geoedf/framework:latest
