@@ -61,7 +61,7 @@ jobs:
       env:
         TOKEN: ${{ secrets.TOKEN }}
       run: |
-        singularity remote add geoedf ec2-18-215-173-2.compute-1.amazonaws.com
+        singularity remote add geoedf www.registry.geoedf.org
         echo "    Token: '$TOKEN'" >> ../.singularity/remote.yaml
         singularity remote use geoedf
         singularity push -U container.sif library://MoldingTofu/geoedf/framework:latest
